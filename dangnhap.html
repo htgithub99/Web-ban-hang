@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	<style>
+	*{
+		box-sizing: border-box;
+	}
+	.form-inline .form-control{
+		width: 320px;
+	}
+	.btn{
+		background-color: rgb(0, 102, 0);
+		color: white;
+	}
+	p{
+		padding: 10px 5px;
+	}
+	a{
+		color: black;
+	}
+	.header{
+		background-color: #CD1818;
+		padding: 10px 0;
+	}
+	.navbar-toggle{
+		border-color: #fff !important;
+	}
+	.navbar-toggle .icon-bar{
+		background: #fff !important;
+	}
+	.search{
+		padding:10px;
+	}
+	nav{
+		background:black;
+	}
+	ul{
+		padding: 0;
+		list-style: none;
+		margin: 0;
+	}
+	.main-menu li{
+		display: inline-block;
+		position: relative;
+		z-index:9999;
+		margin-right: -4px;
+	}
+	.main-menu li a{
+		color:#fff;
+		text-decoration: none;
+		display: block;
+		line-height: 50px;
+		padding: 0 25px;
+		background:black;
+	}
+	.main-menu li:last-child a{
+		border-right: none;
+	}
+
+	/* sub-menu (cấp 2) */
+	.sub-menu{
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 200px;
+		background: rgba(0, 0, 0, .4);
+		display: none;
+	}
+	.sub-menu li{
+		display: block;
+	}
+	.sub-menu li a{
+		border-right: none;	
+	}
+	.sub-menu .sub-menu{
+		top: 0;
+		left: 100%;
+	}
+	/* hiển thị menu khi hover */
+	.main-menu>li:hover>.sub-menu{
+		display: block;
+	}
+	section{
+		background: #060;
+	}
+	.main-width {
+		width: 1200px;
+		margin: 0 auto;
+		min-width: 1200px;
+	}
+	.container{
+		padding: 0 5px;
+	}
+	footer{
+		min-width: 1024px;
+		margin: 0 auto;
+		background: linear-gradient(to bottom,#10473f 0%,#00483e 100%);
+		padding: 15px;
+		clear: both;
+	}
+	.footer{
+		padding: 15px;
+		color: #663;
+	}
+	.number{
+		color: red;
+		font-size: 21px;
+	}	
+	.colfoot{
+		float: left;
+		width: 28%;
+		margin: 0;
+		position: relative;
+	}
+	.colfoot li{
+		float: none;
+		position: relative;
+		font-size: 13px;
+		color: #444;
+		padding: 5px 0;
+	}
+	.collast{
+		width: 11%;
+		float: right;
+	}
+	.collast li a{
+		padding-left: 5px;
+	}
+	.text-danger{
+		color: #900;
+		font-weight: bold;
+	}
+	.layouts-login{
+		display: inline-block;
+		clear: both;
+		width: 100%;
+	}
+	.layouts-login .left{
+		float: left;
+		width: 590px;
+	}
+	.layouts-login h3{
+		font-size: 20px;
+	}
+	.form-label-row{
+		width: 100%;
+		display: inline-block;
+		clear: both;
+		margin-bottom: 8px;
+	}
+	.form-label-row .form-label{
+		float: left;
+		width: 30%;
+		text-align: right;
+		font: 14px Arial,Helvetica,sans-serif;
+		color: #888;
+		padding: 8px 0;
+	}
+	.text1{
+		color: #a94442;
+	}
+	.form-label-row .input{
+		border: 1px solid #ddd;
+		padding: 8px;
+		float: right;
+		width: 65%;
+	}
+	input{
+		width: 100%;
+		border: 0;
+		font: 14px Arial,Helvetica,sans-serif;
+		color: #555;
+		outline: none;
+	}
+	select{
+		width: 100%;
+		border: 0;
+		font: 14px Arial,Helvetica,sans-serif;
+		color: #555;
+		outline: none;
+	}
+	.form-label-row .no-border{
+		border: none;
+		padding: 0;
+
+	}
+	.btn {
+		display: inline-block;
+		padding: 6px 12px;
+		margin-bottom: 0;
+		margin-right: 10px;
+		font-size: 14px;
+		font-weight: normal;
+		line-height: 1.42857143;
+		text-align: center;
+		border: 1px solid transparent;
+	}
+	.btn-default {
+		color: #333;
+		background-color: #fff;
+		border-color: #ccc;
+	}
+	.layouts-login .right1{
+		float: right;
+		width: 550px;
+	}
+	h4{
+		font-size: 16px;
+	}
+</style>
+</head>
+<body>
+	<header>
+		<div class="wrap">
+
+			<div class="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-4">
+						<div class="logo">
+							<a href="index.html"><img src="img/logo-black.png" width="200"></a>
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".collapse-main">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+
+					</div>
+					<div class="col-md-5 col-sm- hidden-xs">
+						<div class="input-group search">
+							<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+						</div>
+					</div>
+					<div class="form-group col-md-3 form">		
+							<a class="btn btn-primary" href="dangnhap.html">Đăng nhập</a>
+							<a class="btn btn-primary" href="dangky.html">Đăng ký</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</header>
+	<nav>
+		<div class="container">
+
+			<div class="collapse navbar-collapse collapse-main">
+				<ul class="main-menu">
+					<li><a href="">ĐIỆN THOẠI</a>
+						<ul class="sub-menu">
+							<li><a href="">SAMSUNG</a></li>
+							<li><a href="">IPHONE</a></li>
+							<li><a href="">NOKIA</a></li>
+							<li><a href="">OPPO</a></li>
+							<li><a href="">XIAOMI</a></li>
+						</ul>
+					</li>
+					<li><a href="">LAPTOP</a>
+						<ul class="sub-menu">
+							<li><a href="">DELL</a></li>
+							<li><a href="">ASUS</a></li>
+							<li><a href="">hp</a></li>
+							<li><a href="">SONY</a></li>
+						</ul>
+					</li>
+					<li><a href="">APPLE</a>
+						<ul class="sub-menu">
+							<li><a href="">iphone</a></li>
+							<li><a href="">iPAC</a></li>
+							<li><a href="">MACBOOK</a></li>
+							<li><a href="">MAC PRO</a></li>
+							<li><a href="">iMAC</a></li>
+						</ul>
+					</li>
+					<li><a href="">TAPLET</a>
+						<ul class="sub-menu">
+							<li><a href="">Apple</a></li>
+							<li><a href="">Sam sung</a></li>
+							<li><a href="">Lenovo</a></li>
+							<li><a href="">Huewai</a></li>
+							<li><a href="">Ltel</a></li>
+						</ul>
+					</li>
+					<li><a href="">PHỤ KIỆN</a>
+						<ul class="sub-menu">
+							<li><a href="">Sạc dự phòng</a></li>
+							<li><a href="">Thẻ nhớ</a></li>
+							<li><a href="">Tai nghe</a></li>
+							<li><a href="">Loa</a></li>
+							<li><a href="">Chuột</a></li>
+						</ul>
+					</li>
+					<li><a href="">MÁY ĐỔI TRẢ</a></li>
+					<li><a href="">SIM & THẺ</a></li>
+					<li><a href="">KHUYẾN MẠI</a>
+						<ul class="sub-menu">
+							<li><a href="">Thông tin trao thưởng</a></li>
+							<li><a href="">Tất cả khuyến mại</a></li>
+						</ul>
+					</li>
+					<li><a href="">TRẢ GÓP 0%</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</nav>
+	<main>
+	<div class="container">
+			<div class="layouts-login">
+				<div class="left">
+					<h3>Đăng nhập tài khoản mới</h3>
+					<hr>
+					<form action="" method="get" accept-charset="utf-8" id="frmLogin">
+						<div class="form-label-row">
+							<label for="" class="form-label">Tài khoản đăng nhập</label>
+							<div class="input">
+								<input type="text" name="" id="user_name" placeholder="Nhập tên tài khoản...">
+							</div>
+						</div>
+						<div class="form-label-row">
+							<label for="" class="form-label">Mật khẩu</label>
+							<div class="input">
+								<input type="password" id="password" name="" placeholder="Nhập mật khẩu...">
+							</div>
+						</div>
+						<div class="form-label-row">
+							<label for="" class="form-label"></label>
+							<div class="input no-border">
+								<button class="btn btn-default" type="submit"><i class="fa fa-sign-in"></i> Đăng nhập</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="right1">
+					<h3>Đăng nhập bằng các tài khoản có sẵn</h3>
+					<hr>
+					<form action="register_submit" method="get" accept-charset="utf-8">
+						<div class="form-label-row">
+								<button type="" class="btn btn-default" type="submit"><i class="fa fa-google-plus-square" style="font-size:20px"></i> Google</button>
+								<button type="" class="btn btn-default" type="submit"><i class="fa fa-facebook-square" style="font-size:20px"></i> Facebook</button>
+						</div>
+						<h3>Chưa có tài khoản</h3>
+						<hr>
+						<div class="form-label-row">
+								<button type="" id="btn_register" class="btn btn-default" type="submit"><i class="fa fa-sign-in" style="font-size:20px"></i> Đăng ký</button>
+						</div>
+						<h3>Tìm mật khẩu</h3>
+						<hr>
+						<div class="form-label-row">
+								<button type="" id="btn_register" class="btn btn-default" type="submit"><i class="fa fa-sign-in" style="font-size:20px"></i> Quên mật khẩu</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div class="row footer">
+			<div class="col-md-3">
+				Giới thiệu về công ty <br>
+				Câu hỏi thường gặp mua hàng <br>
+				Các chính sách FPT Shop <br>
+				Quy chế hoạt động <br>
+				Kiểm tra hóa đơn điện tử <br>
+				Tra cứu thông tin bảo hành <br>
+			</div>
+			<div class="col-md-3">
+				Tin tuyển dụng <br>
+				Tin khuyến mãi <br>
+				Hướng dẫn mua online <br>
+				Hướng dẫn mua trả góp <br>
+				Chính sách trả góp <br>
+			</div>
+			<div class="col-md-3">
+				Hệ thống cửa hàng <br>
+				Hệ thống bảo hành <br>
+				Kiểm tra hàng Apple chính hãng <br>
+				Giới thiệu máy đổi trả <br>
+				Chính sách đổi trả <br>
+			</div>
+			<div class="col-md-3">
+				Tư vấn mua hàng (Miễn phí)
+				<div class="number">1800 6601</div>
+				Góp ý, khiếu nại dịch vụ (8h00-22h00)
+				<div class="number">1800 6616</div>
+			</div>
+		</div>			
+	</footer>
+
+</main>
+
+</footer>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/wow.min.js"> </script>
+<script src="js/dangnhap.js"></script>
+<script>
+	$(document).ready(function(){
+		$(".owl-carousel").owlCarousel();
+
+		$(".main-menu>li").click(function(event) {
+			event.preventDefault();
+			$(this).find("ul").slideToggle();
+			$(this).siblings().find("ul").slideUp();
+		});
+	});
+</script>
+</body>
+</html>

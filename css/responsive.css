@@ -1,0 +1,21 @@
+@media (min-width: 992px) and (max-width: 1199px){
+	.main-menu li a {
+		padding: 0 15px;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px){
+	.main-menu li a {
+		padding: 0 8px;
+		font-size: 12px;
+	}
+}
+@media (max-width: 767px){
+	.main-menu li{
+		display: block;
+	}
+	.sub-menu{
+		position: static;
+		display: block;
+		padding-left: 25px;
+	}
+}
